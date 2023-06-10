@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		A63DD30B2A335BF600565389 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A63DD30A2A335BF600565389 /* main.cpp */; };
+		A63DD3132A335D1A00565389 /* window.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A63DD3112A335D1A00565389 /* window.cpp */; };
+		A63DD3162A335EB500565389 /* draw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A63DD3142A335EB500565389 /* draw.cpp */; };
+		A64F66212A33F40F0019D025 /* play.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A64F661F2A33F40F0019D025 /* play.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +28,12 @@
 /* Begin PBXFileReference section */
 		A63DD3072A335BF600565389 /* Reality Engine */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Reality Engine"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A63DD30A2A335BF600565389 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		A63DD3112A335D1A00565389 /* window.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = window.cpp; sourceTree = "<group>"; };
+		A63DD3122A335D1A00565389 /* window.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = window.hpp; sourceTree = "<group>"; };
+		A63DD3142A335EB500565389 /* draw.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = draw.cpp; sourceTree = "<group>"; };
+		A63DD3152A335EB500565389 /* draw.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = draw.hpp; sourceTree = "<group>"; };
+		A64F661F2A33F40F0019D025 /* play.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = play.cpp; sourceTree = "<group>"; };
+		A64F66202A33F40F0019D025 /* play.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = play.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +66,13 @@
 		A63DD3092A335BF600565389 /* Reality Engine */ = {
 			isa = PBXGroup;
 			children = (
+				A63DD3142A335EB500565389 /* draw.cpp */,
+				A63DD3152A335EB500565389 /* draw.hpp */,
 				A63DD30A2A335BF600565389 /* main.cpp */,
+				A63DD3112A335D1A00565389 /* window.cpp */,
+				A63DD3122A335D1A00565389 /* window.hpp */,
+				A64F661F2A33F40F0019D025 /* play.cpp */,
+				A64F66202A33F40F0019D025 /* play.hpp */,
 			);
 			path = "Reality Engine";
 			sourceTree = "<group>";
@@ -120,6 +135,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A63DD30B2A335BF600565389 /* main.cpp in Sources */,
+				A63DD3132A335D1A00565389 /* window.cpp in Sources */,
+				A63DD3162A335EB500565389 /* draw.cpp in Sources */,
+				A64F66212A33F40F0019D025 /* play.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,7 +257,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				LIBRARY_SEARCH_PATHS = "/usr/local/Cellar/**";
+				OTHER_LDFLAGS = (
+					"-lsdl2",
+					"-lsdl2_gfx",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SYSTEM_HEADER_SEARCH_PATHS = (
+					/usr/local/Cellar/sdl2/2.24.0/include,
+					/usr/local/include,
+				);
 			};
 			name = Debug;
 		};
@@ -247,7 +274,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				LIBRARY_SEARCH_PATHS = "/usr/local/Cellar/**";
+				OTHER_LDFLAGS = (
+					"-lsdl2",
+					"-lsdl2_gfx",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SYSTEM_HEADER_SEARCH_PATHS = (
+					/usr/local/Cellar/sdl2/2.24.0/include,
+					/usr/local/include,
+				);
 			};
 			name = Release;
 		};
